@@ -154,6 +154,22 @@
             overflow: hidden;
             aspect-ratio: 4/3;
             background: #f8f9fa;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .day-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        
+        .day-image:hover img {
+            transform: scale(1.05);
+        }
+        
+        .day-image-placeholder {
             display: flex;
             align-items: center;
             justify-content: center;
@@ -162,10 +178,10 @@
             text-align: center;
             padding: 1rem;
             border: 2px dashed #e9ecef;
-            transition: all 0.3s ease;
+            height: 100%;
         }
         
-        .day-image:hover {
+        .day-image-placeholder:hover {
             border-color: var(--primary-color);
             color: var(--primary-color);
         }
@@ -293,9 +309,15 @@
             </header>
             <div class="day-content">
                 <div class="day-images">
-                    <div class="day-image">Hanoi Old Quarter at night</div>
-                    <div class="day-image">Hoan Kiem Lake with red bridge</div>
-                    <div class="day-image">Steaming bowl of pho</div>
+                    <div class="day-image">
+                        <img src="https://images.unsplash.com/photo-1583417319070-4a69db38a482?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Hanoi Old Quarter at night" loading="lazy">
+                    </div>
+                    <div class="day-image">
+                        <img src="https://images.unsplash.com/photo-1509023464722-18d996393ca8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Hoan Kiem Lake with red bridge" loading="lazy">
+                    </div>
+                    <div class="day-image">
+                        <img src="https://images.unsplash.com/photo-1559181567-c3190ca9959b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Vietnamese pho bowl" loading="lazy">
+                    </div>
                 </div>
                 <p class="day-description">
                     By late afternoon the family clears immigration at Nội Bài, meets a pre-arranged driver, and reaches a boutique hotel tucked inside Hanoi's Old Quarter. Evening brings first tastes and sights: steam rises from bowls of aromatic phở, the red Huc Bridge glows across Hoàn Kiếm Lake, and motorbikes stream past as the family strolls the lantern-lit shoreline.
@@ -312,9 +334,15 @@
             </header>
             <div class="day-content">
                 <div class="day-images">
-                    <div class="day-image">Temple of Literature courtyard</div>
-                    <div class="day-image">Water puppet theater</div>
-                    <div class="day-image">Street food with shoulder pole</div>
+                    <div class="day-image">
+                        <img src="https://images.unsplash.com/photo-1583417319070-4a69db38a482?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Temple of Literature courtyard" loading="lazy">
+                    </div>
+                    <div class="day-image">
+                        <img src="https://images.unsplash.com/photo-1528181304800-259b08848526?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Traditional Vietnamese performance" loading="lazy">
+                    </div>
+                    <div class="day-image">
+                        <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Vietnamese street food vendor" loading="lazy">
+                    </div>
                 </div>
                 <p class="day-description">
                     After breakfast the day opens at the serene Temple of Literature, Vietnam's first university, with its courtyards and stone tortoises. A short ride away, the War Remnants exhibits spark questions from the 15-year-old while younger sibling enjoys climbing through vintage aircraft outside. Lunch is bun cha—charcoal-grilled pork over vermicelli—before a guided street-food walk threads tiny alleys, introducing egg coffee and bamboo-sticky-rice treats. The sun dips and the family watches a traditional water-puppet theater performance on a stage that floats atop a pond.
@@ -369,9 +397,15 @@
             </header>
             <div class="day-content">
                 <div class="day-images">
-                    <div class="day-image">Traditional junk boat with sails</div>
-                    <div class="day-image">Towering limestone islets</div>
-                    <div class="day-image">Kayaking between islands</div>
+                    <div class="day-image">
+                        <img src="https://images.unsplash.com/photo-1528127269322-539801943592?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Traditional junk boat in Ha Long Bay" loading="lazy">
+                    </div>
+                    <div class="day-image">
+                        <img src="https://images.unsplash.com/photo-1528181304800-259b08848526?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Ha Long Bay limestone karsts" loading="lazy">
+                    </div>
+                    <div class="day-image">
+                        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Kayaking in Vietnam" loading="lazy">
+                    </div>
                 </div>
                 <p class="day-description">
                     A mid-morning shuttle winds east to Tuan Chau pier where a traditional wooden junk boat welcomes guests with lotus-flower drinks. After check-in the vessel threads between towering green islets; kayaking into hidden lagoons and exploring Luon Cave fills the afternoon. Night falls over calm water, squid fishing lines glimmer off the stern, and distant cliffs silhouette under starlight.
@@ -388,9 +422,15 @@
             </header>
             <div class="day-content">
                 <div class="day-images">
-                    <div class="day-image">Hoi An lanterns at night</div>
-                    <div class="day-image">Thu Bon River evening</div>
-                    <div class="day-image">Japanese Covered Bridge</div>
+                    <div class="day-image">
+                        <img src="https://images.unsplash.com/photo-1528181304800-259b08848526?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Hoi An lanterns at night" loading="lazy">
+                    </div>
+                    <div class="day-image">
+                        <img src="https://images.unsplash.com/photo-1509023464722-18d996393ca8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Thu Bon River in Hoi An" loading="lazy">
+                    </div>
+                    <div class="day-image">
+                        <img src="https://images.unsplash.com/photo-1583417319070-4a69db38a482?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Japanese Covered Bridge Hoi An" loading="lazy">
+                    </div>
                 </div>
                 <p class="day-description">
                     Tai-chi on deck at sunrise precedes a light brunch as the junk glides back to harbor. The shuttle returns to Hanoi in early afternoon, just in time for a short flight south to Da Nang. A forty-five-minute car ride delivers the family to Hội An where the Thu Bồn River flickers with floating candles and every doorway glows with silk lanterns.
@@ -502,9 +542,15 @@
             </header>
             <div class="day-content">
                 <div class="day-images">
-                    <div class="day-image">Tropical island aerial view</div>
-                    <div class="day-image">Kem Beach pristine waters</div>
-                    <div class="day-image">Sunset Town Mediterranean architecture</div>
+                    <div class="day-image">
+                        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Tropical island aerial view" loading="lazy">
+                    </div>
+                    <div class="day-image">
+                        <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Pristine tropical beach" loading="lazy">
+                    </div>
+                    <div class="day-image">
+                        <img src="https://images.unsplash.com/photo-1540979388789-6cee28a1cdc9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Beach resort sunset" loading="lazy">
+                    </div>
                 </div>
                 <p class="day-description">
                     Morning taxi to Da Nang airport precedes a ninety-minute hop to Phú Quốc. By early afternoon everyone is settled in a beachfront resort on Long Beach, watching the sun melt into the Gulf of Thailand while fishing boats sparkle on the horizon.
