@@ -310,13 +310,13 @@
             <div class="day-content">
                 <div class="day-images">
                     <div class="day-image">
-                        <img src="https://images.unsplash.com/photo-1593697820443-f2a2f3b34796?w=800&q=80" alt="Hanoi Old Quarter at night" loading="lazy">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2d/Vietnam_Hanoi_Japan_Street_-_Linh_Lang_Hanoi.jpg" alt="Hanoi Old Quarter at night" loading="lazy">
                     </div>
                     <div class="day-image">
-                        <img src="https://images.unsplash.com/photo-1516893846135-4e6a47926afc?w=800&q=80" alt="Hoan Kiem Lake with red bridge" loading="lazy">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/d/dc/Hua-Quen_See_Hanoi.JPG" alt="Hoan Kiem Lake with red bridge" loading="lazy">
                     </div>
                     <div class="day-image">
-                        <img src="https://images.unsplash.com/photo-1601039641950-0f2396e3c11a?w=800&q=80" alt="Vietnamese pho bowl" loading="lazy">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/0/01/C%C3%A0_ph%C3%AA%2C_%C4%90i%E1%BB%87n_Bi%C3%AAn_Ph%E1%BB%A7%2C_H%C3%A0_N%E1%BB%99i_004.JPG" alt="Vietnamese pho bowl" loading="lazy">
                     </div>
                 </div>
                 <p class="day-description">
@@ -824,109 +824,6 @@
                 const query = encodeURIComponent(img.alt || 'Vietnam');
                 img.src = `https://source.unsplash.com/800x600/?${query}`;
             }
-        });
-
-        // Replace image sources using curated list (day -> 3 images)
-        const curatedImages = {
-            1: [
-                'https://source.unsplash.com/800x600/?Hanoi,Old%20Quarter,night',
-                'https://source.unsplash.com/800x600/?Hoan%20Kiem%20Lake,red%20bridge',
-                'https://source.unsplash.com/800x600/?Hanoi,pho,bowl'
-            ],
-            2: [
-                'https://source.unsplash.com/800x600/?Hanoi,Temple%20of%20Literature,courtyard',
-                'https://source.unsplash.com/800x600/?Hanoi,water%20puppet,theater',
-                'https://source.unsplash.com/800x600/?Hanoi,street%20food,vendor'
-            ],
-            3: [
-                'https://source.unsplash.com/800x600/?Bat%20Trang,pottery,wheel',
-                'https://source.unsplash.com/800x600/?Hanoi,Dong%20Xuan%20Market,spices',
-                'https://source.unsplash.com/800x600/?Hanoi,ceramic,bowls'
-            ],
-            4: [
-                'https://source.unsplash.com/800x600/?Ninh%20Binh,Tam%20Coc,rice%20paddies',
-                'https://source.unsplash.com/800x600/?Ninh%20Binh,sampan,boat',
-                'https://source.unsplash.com/800x600/?Ninh%20Binh,Mua%20Cave,viewpoint'
-            ],
-            5: [
-                'https://source.unsplash.com/800x600/?Ha%20Long%20Bay,junk%20boat,sails',
-                'https://source.unsplash.com/800x600/?Ha%20Long%20Bay,limestone,karsts',
-                'https://source.unsplash.com/800x600/?Ha%20Long%20Bay,kayak,lagoon'
-            ],
-            6: [
-                'https://source.unsplash.com/800x600/?Hoi%20An,lanterns,night',
-                'https://source.unsplash.com/800x600/?Hoi%20An,Thu%20Bon%20River,evening',
-                'https://source.unsplash.com/800x600/?Hoi%20An,Japanese%20Covered%20Bridge,night'
-            ],
-            7: [
-                'https://source.unsplash.com/800x600/?Hoi%20An,An%20Bang%20Beach,white%20sand',
-                'https://source.unsplash.com/800x600/?Cam%20Thanh,basket%20boat,coconut%20forest',
-                'https://source.unsplash.com/800x600/?Hoi%20An,beach%20bar,sunset'
-            ],
-            8: [
-                'https://source.unsplash.com/800x600/?Hoi%20An,cooking%20class,market',
-                'https://source.unsplash.com/800x600/?Hoi%20An,wet%20market,herbs',
-                'https://source.unsplash.com/800x600/?Da%20Nang,Marble%20Mountains,caves'
-            ],
-            9: [
-                'https://source.unsplash.com/800x600/?Hoi%20An,street%20vendor,quang%20ganh',
-                'https://source.unsplash.com/800x600/?Hoi%20An,ancient%20house,architecture',
-                'https://source.unsplash.com/800x600/?Hoi%20An,tailor,lanterns'
-            ],
-            10: [
-                'https://source.unsplash.com/800x600/?My%20Son,Cham,temple%20ruins',
-                'https://source.unsplash.com/800x600/?My%20Son,Cham,architecture',
-                'https://source.unsplash.com/800x600/?My%20Son,Hindu,carvings'
-            ],
-            11: [
-                'https://source.unsplash.com/800x600/?Hai%20Van%20Pass,train,coastal',
-                'https://source.unsplash.com/800x600/?Hai%20Van%20Pass,railway,coast',
-                'https://source.unsplash.com/800x600/?Hue,Imperial%20City,citadel'
-            ],
-            12: [
-                'https://source.unsplash.com/800x600/?Phu%20Quoc,island,aerial',
-                'https://source.unsplash.com/800x600/?Phu%20Quoc,pristine,beach',
-                'https://source.unsplash.com/800x600/?Phu%20Quoc,beach,resort%20sunset'
-            ],
-            13: [
-                'https://source.unsplash.com/800x600/?Phu%20Quoc,Sao%20Beach,white%20sand',
-                'https://source.unsplash.com/800x600/?Phu%20Quoc,cable%20car,Hon%20Thom',
-                'https://source.unsplash.com/800x600/?Phu%20Quoc,archipelago,tropical%20beach'
-            ],
-            14: [
-                'https://source.unsplash.com/800x600/?Phu%20Quoc,Kiss%20Bridge,sunset',
-                'https://source.unsplash.com/800x600/?Phu%20Quoc,bridge,sea',
-                'https://source.unsplash.com/800x600/?Phu%20Quoc,island%20hopping,boats'
-            ],
-            15: [
-                'https://source.unsplash.com/800x600/?Phu%20Quoc,pepper,plantation',
-                'https://source.unsplash.com/800x600/?Phu%20Quoc,night%20market,seafood',
-                'https://source.unsplash.com/800x600/?Phu%20Quoc,fishing%20village,boats'
-            ],
-            16: [
-                'https://source.unsplash.com/800x600/?Hanoi,sunset,lake',
-                'https://source.unsplash.com/800x600/?Hanoi,egg%20coffee,cafe',
-                'https://source.unsplash.com/800x600/?Hanoi,Old%20Quarter,evening'
-            ],
-            17: [
-                'https://source.unsplash.com/800x600/?Hanoi,Noi%20Bai%20Airport,departure',
-                'https://source.unsplash.com/800x600/?Hanoi,street,night',
-                'https://source.unsplash.com/800x600/?Hanoi,pho,dinner'
-            ],
-            18: [
-                'https://source.unsplash.com/800x600/?Hanoi,Noi%20Bai%20Airport,morning',
-                'https://source.unsplash.com/800x600/?Hanoi,street%20food,breakfast',
-                'https://source.unsplash.com/800x600/?Hanoi,Old%20Quarter,morning'
-            ]
-        };
-
-        // Apply curated sources
-        document.querySelectorAll('.day-card').forEach((card, index) => {
-            const imgs = card.querySelectorAll('.day-image img');
-            const urls = curatedImages[index + 1] || [];
-            imgs.forEach((img, i) => {
-                if (urls[i]) img.src = urls[i];
-            });
         });
     </script>
 </body>
