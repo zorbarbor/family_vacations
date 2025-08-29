@@ -310,13 +310,13 @@
             <div class="day-content">
                 <div class="day-images">
                     <div class="day-image">
-                        <img src="https://images.unsplash.com/photo-1583417319070-4a69db38a482?w=800&q=80" alt="Hanoi Old Quarter at night" loading="lazy">
+                        <img src="https://images.unsplash.com/photo-1593697820443-f2a2f3b34796?w=800&q=80" alt="Hanoi Old Quarter at night" loading="lazy">
                     </div>
                     <div class="day-image">
-                        <img src="https://images.unsplash.com/photo-1528181304800-259b08848526?w=800&q=80" alt="Hoan Kiem Lake with red bridge" loading="lazy">
+                        <img src="https://images.unsplash.com/photo-1516893846135-4e6a47926afc?w=800&q=80" alt="Hoan Kiem Lake with red bridge" loading="lazy">
                     </div>
                     <div class="day-image">
-                        <img src="https://images.unsplash.com/photo-1559181567-c3190ca9959b?w=800&q=80" alt="Vietnamese pho bowl" loading="lazy">
+                        <img src="https://images.unsplash.com/photo-1601039641950-0f2396e3c11a?w=800&q=80" alt="Vietnamese pho bowl" loading="lazy">
                     </div>
                 </div>
                 <p class="day-description">
@@ -738,6 +738,14 @@
             card.addEventListener('mouseleave', () => {
                 card.style.transform = 'translateY(-5px) scale(1)';
             });
+        });
+
+        // Auto-fill any <img> that lacks a valid src using Unsplash keyword search
+        document.querySelectorAll('.day-image img').forEach(img => {
+            if (!img.getAttribute('src') || img.getAttribute('src').trim() === '') {
+                const query = encodeURIComponent(img.alt || 'Vietnam');
+                img.src = `https://source.unsplash.com/800x600/?${query}`;
+            }
         });
     </script>
 </body>
