@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vietnam Family Adventure | March 26 - April 12, 2025</title>
+    <meta name="description" content="A beautiful 18-day family journey through Vietnam - from Hanoi's bustling streets to Phu Quoc's pristine beaches, with cultural immersion and soft adventures perfect for teens.">
+    <meta property="og:title" content="Vietnam Family Adventure 2025">
+    <meta property="og:description" content="18-day family journey through Vietnam - Hanoi, Ha Long Bay, Hoi An, and Phu Quoc">
+    <meta property="og:type" content="website">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary-color: #d4af37;
+            --secondary-color: #8b4513;
+            --accent-color: #ff6b35;
+            --text-dark: #2c3e50;
+            --text-light: #7f8c8d;
+            --background: #fefefe;
+            --card-bg: #ffffff;
+            --shadow: 0 8px 32px rgba(0,0,0,0.1);
+            --gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.7;
+            color: var(--text-dark);
+            background: var(--background);
+            overflow-x: hidden;
+        }
+        
+        .hero {
+            background: var(--gradient);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="75" cy="75" r="1.5" fill="rgba(255,255,255,0.08)"/><circle cx="50" cy="10" r="0.8" fill="rgba(255,255,255,0.12)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>') repeat;
+            opacity: 0.3;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 300;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .hero-subtitle {
+            font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+            opacity: 0.9;
+            margin-bottom: 2rem;
+            font-style: italic;
+        }
+        
+        .trip-overview {
+            background: rgba(255,255,255,0.1);
+            padding: 1.5rem;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+            margin-top: 2rem;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .day-card {
+            background: var(--card-bg);
+            margin: 3rem 0;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: fadeInUp 0.6s ease forwards;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        
+        .day-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.15);
+        }
+        
+        .day-header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            position: relative;
+        }
+        
+        .day-number {
+            font-size: 3rem;
+            font-weight: 300;
+            opacity: 0.3;
+            position: absolute;
+            top: 1rem;
+            right: 2rem;
+        }
+        
+        .day-title {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+            font-weight: 400;
+        }
+        
+        .day-date {
+            font-size: 1rem;
+            opacity: 0.9;
+            font-style: italic;
+        }
+        
+        .day-content {
+            padding: 2.5rem;
+        }
+        
+        .day-images {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .day-image {
+            border-radius: 12px;
+            overflow: hidden;
+            aspect-ratio: 4/3;
+            background: #f8f9fa;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .day-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        
+        .day-image:hover img {
+            transform: scale(1.05);
+        }
+        
+        .day-image-placeholder {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-light);
+            font-style: italic;
+            text-align: center;
+            padding: 1rem;
+            border: 2px dashed #e9ecef;
+            height: 100%;
+        }
+        
+        .day-image-placeholder:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+        }
+        
+        .day-description {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            text-align: justify;
+            color: var(--text-dark);
+        }
+        
+        .navigation {
+            position: fixed;
+            top: 50%;
+            right: 2rem;
+            transform: translateY(-50%);
+            z-index: 100;
+            background: rgba(255,255,255,0.95);
+            border-radius: 25px;
+            padding: 1rem 0;
+            box-shadow: var(--shadow);
+            backdrop-filter: blur(10px);
+        }
+        
+        .nav-dot {
+            display: block;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--text-light);
+            margin: 8px 12px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .nav-dot.active {
+            background: var(--primary-color);
+            transform: scale(1.3);
+        }
+        
+        .footer {
+            background: var(--text-dark);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+            margin-top: 4rem;
+        }
+        
+        .footer h3 {
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+        
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero {
+                padding: 3rem 1rem;
+            }
+            
+            .container {
+                padding: 0 1rem;
+            }
+            
+            .day-card {
+                margin: 2rem 0;
+            }
+            
+            .day-content {
+                padding: 1.5rem;
+            }
+            
+            .navigation {
+                display: none;
+            }
+            
+            .day-images {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media print {
+            .navigation, .hero {
+                display: none;
+            }
+            
+            .day-card {
+                break-inside: avoid;
+                margin: 1rem 0;
+                box-shadow: none;
+                border: 1px solid #ddd;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Vietnam Family Adventure</h1>
+            <p class="hero-subtitle">An 18-Day Journey Through Culture, Nature & Beaches</p>
+            <div class="trip-overview">
+                <p><strong>March 26 - April 12, 2025</strong></p>
+                <p>Two parents and two children (ages 12 & 15) exploring Vietnam's highlights</p>
+                <p>From Hanoi's bustling streets to Phú Quốc's pristine beaches</p>
+            </div>
+        </div>
+    </header>
+
+    <nav class="navigation" id="navigation">
+        <!-- Navigation dots will be generated by JavaScript -->
+    </nav>
+
+    <main class="container">
+        <!-- Day 1 -->
+        <article class="day-card" id="day-1">
+            <header class="day-header">
+                <div class="day-number">1</div>
+                <h2 class="day-title">Arrival in Hanoi</h2>
+                <p class="day-date">Wednesday, March 26</p>
+            </header>
+            <div class="day-content">
+                <div class="day-images">
+                    <div class="day-image">
+                        <img src="https://images.unsplash.com/photo-1583417319070-4a69db38a482?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Hanoi Old Quarter at night" loading="lazy">
+                    </div>
+                    <div class="day-image">
+                        <img src="https://images.unsplash.com/photo-1509023464722-18d996393ca8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Hoan Kiem Lake with red bridge" loading="lazy">
+                    </div>
+                    <div class="day-image">
+                        <img src="https://images.unsplash.com/photo-1559181567-c3190ca9959b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Vietnamese pho bowl" loading="lazy">
+                    </div>
+                </div>
+                <p class="day-description">
+                    By late afternoon the family clears immigration at Nội Bài, meets a pre-arranged driver, and reaches a boutique hotel tucked inside Hanoi's Old Quarter. Evening brings first tastes and sights: steam rises from bowls of aromatic phở, the red Huc Bridge glows across Hoàn Kiếm Lake, and motorbikes stream past as the family strolls the lantern-lit shoreline.
+                </p>
+            </div>
+        </article>
+
+        <!-- Day 2 -->
+        <article class="day-card" id="day-2">
+            <header class="day-header">
+                <div class="day-number">2</div>
+                <h2 class="day-title">Hanoi's Historic Core</h2>
+                <p class="day-date">Thursday, March 27</p>
+            </header>
+            <div class="day-content">
+                <div class="day-images">
+                    <div class="day-image">
+                        <img src="https://images.unsplash.com/photo-1583417319070-4a69db38a482?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Temple of Literature courtyard" loading="lazy">
+                    </div>
+                    <div class="day-image">
+                        <img src="https://images.unsplash.com/photo-1528181304800-259b08848526?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Traditional Vietnamese performance" loading="lazy">
+                    </div>
+                    <div class="day-image">
+                        <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Vietnamese street food vendor" loading="lazy">
+                    </div>
+                </div>
+                <p class="day-description">
+                    After breakfast the day opens at the serene Temple of Literature, Vietnam's first university, with its courtyards and stone tortoises. A short ride away, the War Remnants exhibits spark questions from the 15-year-old while younger sibling enjoys climbing through vintage aircraft outside. Lunch is bun cha—charcoal-grilled pork over vermicelli—before a guided street-food walk threads tiny alleys, introducing egg coffee and bamboo-sticky-rice treats. The sun dips and the family watches a traditional water-puppet theater performance on a stage that floats atop a pond.
+                </p>
+            </div>
+        </article>
+
+        <!-- Day 3 -->
+        <article class="day-card" id="day-3">
+            <header class="day-header">
+                <div class="day-number">3</div>
+                <h2 class="day-title">Bat Trang Pottery & Dong Xuan Market</h2>
+                <p class="day-date">Friday, March 28</p>
+            </header>
+            <div class="day-content">
+                <div class="day-images">
+                    <div class="day-image">Pottery village ceramics</div>
+                    <div class="day-image">Dong Xuan Market spices</div>
+                    <div class="day-image">Traditional pottery making</div>
+                </div>
+                <p class="day-description">
+                    A forty-five-minute drive follows the Red River to Bat Trang village where the children try the potter's wheel, shaping clay bowls and decorating them with cobalt glaze. Back in the city the afternoon is spent wandering Dong Xuan Market, its aisles stacked with spices, dried fruit, and colorful fabrics. In the evening tickets and final paperwork for tomorrow's Ninh Binh excursion and the upcoming Ha Long cruise are confirmed.
+                </p>
+            </div>
+        </article>
+
+        <!-- Day 4 -->
+        <article class="day-card" id="day-4">
+            <header class="day-header">
+                <div class="day-number">4</div>
+                <h2 class="day-title">Ninh Binh: "Ha Long Bay on Land"</h2>
+                <p class="day-date">Saturday, March 29</p>
+            </header>
+            <div class="day-content">
+                <div class="day-images">
+                    <div class="day-image">Tam Coc limestone cliffs and rice paddies</div>
+                    <div class="day-image">Sampan boat with woman rowing</div>
+                    <div class="day-image">Mua Cave dragon summit view</div>
+                </div>
+                <p class="day-description">
+                    A dawn start carries the family two hours south to Tam Cốc, a valley of emerald rice paddies squeezed between limestone cliffs. Women row flat-bottom sampans with their feet, guiding the boat under cave arches while waterbirds skim the surface. After the ride, bicycles await for a gentle pedal through rice fields to Múa Cave; 450 stone steps lead to a dragon-topped summit and a panoramic view. Late afternoon they return to Hanoi for dinner and rest.
+                </p>
+            </div>
+        </article>
+
+        <!-- Day 5 -->
+        <article class="day-card" id="day-5">
+            <header class="day-header">
+                <div class="day-number">5</div>
+                <h2 class="day-title">Boarding a Ha Long Bay Junk</h2>
+                <p class="day-date">Sunday, March 30</p>
+            </header>
+            <div class="day-content">
+                <div class="day-images">
+                    <div class="day-image">
+                        <img src="https://images.unsplash.com/photo-1528127269322-539801943592?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Traditional junk boat in Ha Long Bay" loading="lazy">
+                    </div>
+                    <div class="day-image">
+                        <img src="https://images.unsplash.com/photo-1528181304800-259b08848526?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Ha Long Bay limestone karsts" loading="lazy">
+                    </div>
+                    <div class="day-image">
+                        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Kayaking in Vietnam" loading="lazy">
+                    </div>
+                </div>
+                <p class="day-description">
+                    A mid-morning shuttle winds east to Tuan Chau pier where a traditional wooden junk boat welcomes guests with lotus-flower drinks. After check-in the vessel threads between towering green islets; kayaking into hidden lagoons and exploring Luon Cave fills the afternoon. Night falls over calm water, squid fishing lines glimmer off the stern, and distant cliffs silhouette under starlight.
+                </p>
+            </div>
+        </article>
+
+        <!-- Day 6 -->
+        <article class="day-card" id="day-6">
+            <header class="day-header">
+                <div class="day-number">6</div>
+                <h2 class="day-title">From Emerald Bay to Lantern Town</h2>
+                <p class="day-date">Monday, March 31</p>
+            </header>
+            <div class="day-content">
+                <div class="day-images">
+                    <div class="day-image">
+                        <img src="https://images.unsplash.com/photo-1528181304800-259b08848526?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Hoi An lanterns at night" loading="lazy">
+                    </div>
+                    <div class="day-image">
+                        <img src="https://images.unsplash.com/photo-1509023464722-18d996393ca8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Thu Bon River in Hoi An" loading="lazy">
+                    </div>
+                    <div class="day-image">
+                        <img src="https://images.unsplash.com/photo-1583417319070-4a69db38a482?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Japanese Covered Bridge Hoi An" loading="lazy">
+                    </div>
+                </div>
+                <p class="day-description">
+                    Tai-chi on deck at sunrise precedes a light brunch as the junk glides back to harbor. The shuttle returns to Hanoi in early afternoon, just in time for a short flight south to Da Nang. A forty-five-minute car ride delivers the family to Hội An where the Thu Bồn River flickers with floating candles and every doorway glows with silk lanterns.
+                </p>
+            </div>
+        </article>
+
+        <!-- Day 7 -->
+        <article class="day-card" id="day-7">
+            <header class="day-header">
+                <div class="day-number">7</div>
+                <h2 class="day-title">Beach and Coconut-Forest Fun</h2>
+                <p class="day-date">Tuesday, April 1</p>
+            </header>
+            <div class="day-content">
+                <div class="day-images">
+                    <div class="day-image">An Bang Beach white sand</div>
+                    <div class="day-image">Coconut forest basket boats</div>
+                    <div class="day-image">Beach bar tropical setting</div>
+                </div>
+                <p class="day-description">
+                    Morning is pure leisure on An Bàng Beach: soft sand, gentle waves, chilled coconuts. After lunch a guide leads the family into Cam Thanh's nipa-palm channels; each climbs into a round bamboo basket boat that spins playfully while fishermen sing folk songs. Evening markets serve sweet rice pancakes and coconut ice cream beneath lantern canopies.
+                </p>
+            </div>
+        </article>
+
+        <!-- Day 8 -->
+        <article class="day-card" id="day-8">
+            <header class="day-header">
+                <div class="day-number">8</div>
+                <h2 class="day-title">Cooking Class and Marble Mountains</h2>
+                <p class="day-date">Wednesday, April 2</p>
+            </header>
+            <div class="day-content">
+                <div class="day-images">
+                    <div class="day-image">Hoi An cooking class</div>
+                    <div class="day-image">Market visit fresh ingredients</div>
+                    <div class="day-image">Marble Mountains caves</div>
+                </div>
+                <p class="day-description">
+                    A chef escorts everyone through Hội An's wet market, buying herbs, morning-glory greens, and fresh rice noodles. Back at the cooking school they pound lemongrass, stir-fry cao lầu, and craft crispy spring rolls. Later a short ride south leads to Marble Mountains; stone steps ascend through pagodas and natural caves lit by shafts of afternoon sun.
+                </p>
+            </div>
+        </article>
+
+        <!-- Day 9 -->
+        <article class="day-card" id="day-9">
+            <header class="day-header">
+                <div class="day-number">9</div>
+                <h2 class="day-title">Tailors and Poolside Downtime</h2>
+                <p class="day-date">Thursday, April 3</p>
+            </header>
+            <div class="day-content">
+                <div class="day-images">
+                    <div class="day-image">Street vendors with quang ganh</div>
+                    <div class="day-image">Ancient house architecture</div>
+                    <div class="day-image">Tailor shops and lanterns</div>
+                </div>
+                <p class="day-description">
+                    The day is easy by design: morning visits to famous Hội An tailors for measurements and fabric choices, followed by an afternoon at the hotel pool and an evening photo stroll along lantern-lined streets.
+                </p>
+            </div>
+        </article>
+
+        <!-- Day 10 -->
+        <article class="day-card" id="day-10">
+            <header class="day-header">
+                <div class="day-number">10</div>
+                <h2 class="day-title">Mỹ Sơn Sanctuary</h2>
+                <p class="day-date">Friday, April 4</p>
+            </header>
+            <div class="day-content">
+                <div class="day-images">
+                    <div class="day-image">Cham temple ruins</div>
+                    <div class="day-image">Ancient Cham architecture</div>
+                    <div class="day-image">Hindu temple carvings</div>
+                </div>
+                <p class="day-description">
+                    An early minivan heads west to the jungle-wrapped ruins of Mỹ Sơn where red-brick Cham temples stand in misty glades. A traditional Cham dance performance adds rhythm before the family returns to Hội An for a sunset swim and night-market snacks.
+                </p>
+            </div>
+        </article>
+
+        <!-- Day 11 -->
+        <article class="day-card" id="day-11">
+            <header class="day-header">
+                <div class="day-number">11</div>
+                <h2 class="day-title">Hải Vân Pass Rail and Imperial Huế</h2>
+                <p class="day-date">Saturday, April 5</p>
+            </header>
+            <div class="day-content">
+                <div class="day-images">
+                    <div class="day-image">Train over Hai Van Pass</div>
+                    <div class="day-image">Coastal railway views</div>
+                    <div class="day-image">Hue Imperial City</div>
+                </div>
+                <p class="day-description">
+                    Windows frame sea cliffs as the Reunification Railway chugs over the Hải Vân ridge toward Huế. A local guide meets the train, leading through the vast Imperial Citadel, onto dragon boats across the Perfume River, and out to Emperor Tự Đức's lakeside tombs. Evening sees the same coastal rail line return the family to the comfort of their Hội An hotel.
+                </p>
+            </div>
+        </article>
+
+        <!-- Day 12 -->
+        <article class="day-card" id="day-12">
+            <header class="day-header">
+                <div class="day-number">12</div>
+                <h2 class="day-title">Flight to Phú Quốc Island</h2>
+                <p class="day-date">Sunday, April 6</p>
+            </header>
+            <div class="day-content">
+                <div class="day-images">
+                    <div class="day-image">
+                        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Tropical island aerial view" loading="lazy">
+                    </div>
+                    <div class="day-image">
+                        <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Pristine tropical beach" loading="lazy">
+                    </div>
+                    <div class="day-image">
+                        <img src="https://images.unsplash.com/photo-1540979388789-6cee28a1cdc9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Beach resort sunset" loading="lazy">
+                    </div>
+                </div>
+                <p class="day-description">
+                    Morning taxi to Da Nang airport precedes a ninety-minute hop to Phú Quốc. By early afternoon everyone is settled in a beachfront resort on Long Beach, watching the sun melt into the Gulf of Thailand while fishing boats sparkle on the horizon.
+                </p>
+            </div>
+        </article>
+
+        <!-- Day 13 -->
+        <article class="day-card" id="day-13">
+            <header class="day-header">
+                <div class="day-number">13</div>
+                <h2 class="day-title">Snorkeling the An Thới Archipelago</h2>
+                <p class="day-date">Monday, April 7</p>
+            </header>
+            <div class="day-content">
+                <div class="day-images">
+                    <div class="day-image">Sao Beach white sand</div>
+                    <div class="day-image">Cable car over sea to Hon Thom</div>
+                    <div class="day-image">Tropical beach paradise</div>
+                </div>
+                <p class="day-description">
+                    A speedboat slices south to crystal-clear coves where coral gardens host parrotfish and starfish. After snorkeling at Hòn Mây Rút and Hòn Thơm, a barbecue lunch of grilled fish and tropical fruit is served on a quiet sandbar before the boat returns.
+                </p>
+            </div>
+        </article>
+
+        <!-- Day 14 -->
+        <article class="day-card" id="day-14">
+            <header class="day-header">
+                <div class="day-number">14</div>
+                <h2 class="day-title">Record-Breaking Cable Car and Water Park</h2>
+                <p class="day-date">Tuesday, April 8</p>
+            </header>
+            <div class="day-content">
+                <div class="day-images">
+                    <div class="day-image">Kiss Bridge sunset</div>
+                    <div class="day-image">Romantic walkway over sea</div>
+                    <div class="day-image">Island hopping boats</div>
+                </div>
+                <p class="day-description">
+                    The family rides the world-longest over-sea cable car—7.9 km of turquoise panorama—to Hòn Thơm Island. Hours slip by in Aquatopia Water Park, hurtling down slides or lazing in shaded cabanas, before the gondola carries them back across sunset-pink seas.
+                </p>
+            </div>
+        </article>
+
+        <!-- Day 15 -->
+        <article class="day-card" id="day-15">
+            <header class="day-header">
+                <div class="day-number">15</div>
+                <h2 class="day-title">Sao Beach and Night Market</h2>
+                <p class="day-date">Wednesday, April 9</p>
+            </header>
+            <div class="day-content">
+                <div class="day-images">
+                    <div class="day-image">Phu Quoc pepper plantation</div>
+                    <div class="day-image">Night market seafood</div>
+                    <div class="day-image">Local fishing village</div>
+                </div>
+                <p class="day-description">
+                    Morning unfolds on the powder-white sands of Sao Beach where turquoise shallows invite snorkeling and paddleboards. Evening brings Duong Dong Night Market: sizzling calamari skewers, rolled ice-cream cylinders, and stalls of pearl jewelry.
+                </p>
+            </div>
+        </article>
+
+        <!-- Day 16 -->
+        <article class="day-card" id="day-16">
+            <header class="day-header">
+                <div class="day-number">16</div>
+                <h2 class="day-title">Return Flight to Hanoi</h2>
+                <p class="day-date">Thursday, April 10</p>
+            </header>
+            <div class="day-content">
+                <div class="day-images">
+                    <div class="day-image">Golden sunset over sea</div>
+                    <div class="day-image">Beach relaxation scene</div>
+                    <div class="day-image">Tropical drink at sunset</div>
+                </div>
+                <p class="day-description">
+                    A midday flight lifts off from Phú Quốc and lands two hours later in Hanoi. The afternoon is spent sipping Hanoi's signature egg-coffee in the historic Giang Café, followed by last-minute silk shopping along Hàng Gai Street.
+                </p>
+            </div>
+        </article>
+
+        <!-- Day 17 -->
+        <article class="day-card" id="day-17">
+            <header class="day-header">
+                <div class="day-number">17</div>
+                <h2 class="day-title">Craft Village & Departure</h2>
+                <p class="day-date">Friday, April 11</p>
+            </header>
+            <div class="day-content">
+                <div class="day-images">
+                    <div class="day-image">Airport departure scene</div>
+                    <div class="day-image">Hanoi street at night</div>
+                    <div class="day-image">Final pho dinner</div>
+                </div>
+                <p class="day-description">
+                    A leisurely start precedes a short trip to Chuông Village where artisans weave and paint conical hats; each family member decorates a souvenir nón lá. Back in the city there is rooftop-café downtime before an evening transfer to Nội Bài for the 22:30 overnight flight home.
+                </p>
+            </div>
+        </article>
+
+        <!-- Day 18 -->
+        <article class="day-card" id="day-18">
+            <header class="day-header">
+                <div class="day-number">18</div>
+                <h2 class="day-title">Arrival Home</h2>
+                <p class="day-date">Saturday, April 12</p>
+            </header>
+            <div class="day-content">
+                <div class="day-images">
+                    <div class="day-image">Noi Bai Airport</div>
+                    <div class="day-image">Final street food breakfast</div>
+                    <div class="day-image">Hanoi Old Quarter morning</div>
+                </div>
+                <p class="day-description">
+                    The flight lands at dawn, ending the journey with memories of lanterns, karst peaks, coral reefs, and endless bowls of noodles.
+                </p>
+            </div>
+        </article>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <h3>Journey's End</h3>
+            <p>18 days of cultural immersion, natural wonders, and family adventures</p>
+            <p>From the bustling streets of Hanoi to the pristine beaches of Phú Quốc</p>
+            <p style="margin-top: 2rem; opacity: 0.7; font-size: 0.9rem;">
+                Created with ❤️ for an unforgettable family adventure
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Generate navigation dots
+        const navigation = document.getElementById('navigation');
+        const dayCards = document.querySelectorAll('.day-card');
+        
+        dayCards.forEach((card, index) => {
+            const dot = document.createElement('a');
+            dot.className = 'nav-dot';
+            dot.href = `#day-${index + 1}`;
+            dot.title = `Day ${index + 1}`;
+            navigation.appendChild(dot);
+        });
+        
+        // Animate cards on scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationDelay = `${index * 0.1}s`;
+                    entry.target.classList.add('animate');
+                    
+                    // Update navigation
+                    const dayNumber = entry.target.id.split('-')[1];
+                    document.querySelectorAll('.nav-dot').forEach((dot, i) => {
+                        dot.classList.toggle('active', i === parseInt(dayNumber) - 1);
+                    });
+                }
+            });
+        }, {
+            threshold: 0.3
+        });
+        
+        dayCards.forEach(card => observer.observe(card));
+        
+        // Smooth scrolling for navigation
+        document.querySelectorAll('.nav-dot').forEach(dot => {
+            dot.addEventListener('click', (e) => {
+                e.preventDefault();
+                const target = document.querySelector(dot.getAttribute('href'));
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'center'
+                });
+            });
+        });
+        
+        // Add some interactive touches
+        dayCards.forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'translateY(-8px) scale(1.02)';
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(-5px) scale(1)';
+            });
+        });
+    </script>
+</body>
+</html> 
